@@ -14,6 +14,10 @@
                     </div>
                 </div>
                 
+                <% if article.categories.any? %>
+                    <p>Categories: <%= render article.categories %></p>
+                <% end %>
+                
                 <!-- || means or. So current_user is the article user, or the current user is an admin -->
                 <% if logged_in? && (current_user == article.user || current_user.admin?) %>
                     <div class="article-actions">
